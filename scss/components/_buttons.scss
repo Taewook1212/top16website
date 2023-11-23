@@ -1,0 +1,33 @@
+@use './../common/' as *;
+
+%button {
+  // SCSS에서 %로 시작하는 선택자는 직접적으로 컴파일되지 않고 다른 규칙에서 확장될 때만 적용되고 버튼 스타일을 재사용할 수 있다.플레이스홀더 선택자.
+  @include reset-button;
+  @include px(em(30));
+  @include py(em(15));
+  @include rounded(xl);
+}
+
+// 햄버거 버튼 헤더
+.header-menu {
+  border: none;
+  background-color: transparent;
+}
+
+.link__demopage {
+  @extend %button;
+  $fg: $white;
+  $bg: $black;
+
+  border: 0;
+  color: $fg;
+  background: $bg;
+  @include font(size rem(15));
+}
+
+.works__button {
+  border: 0;
+  background: transparent;
+  letter-spacing: -1px;
+  word-spacing: -1px;
+}

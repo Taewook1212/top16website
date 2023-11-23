@@ -1,0 +1,57 @@
+@use './../common/' as *;
+@use './../components' as *;
+
+.main-wrapper {
+  margin: auto;
+  // padding: 200px 0 150px 0;
+  @include padding(top 200 bottom 100);
+  @include size(90%);
+  @include flex-container(column);
+  @include gap(em(20));
+}
+
+.main-button {
+  @include flex-container(row justify-around);
+  @include my(em(10));
+}
+
+.main__title1 {
+  @include font(size rem(12.8) lh 18px);
+  letter-spacing: 0.18rem;
+}
+
+.main__title2 {
+  @include font(size rem(48) lh 1);
+  letter-spacing: -0.1rem;
+}
+
+.main__title3 {
+  @include font(size rem(19.2) lh 1.3);
+  @include my(20px);
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.flex__logo {
+  overflow: hidden;
+  padding: 30px 0;
+  white-space: nowrap;
+  border-top: 1px solid black;
+}
+
+.logo__slide {
+  animation: 50s slide infinite linear;
+  display: inline-block;
+}
+
+.logo__slide img {
+  height: 50px;
+  margin: 0 50px;
+}

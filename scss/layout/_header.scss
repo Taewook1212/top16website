@@ -1,0 +1,33 @@
+@use './../common/' as *;
+@use './../components' as *;
+
+// 헤더
+
+.header {
+  // width: 100%;
+  // padding: 20px 0;
+  // display: flex;
+  // justify-content: center;
+  // background: rgb(113, 113, 124);
+  // height: auto;
+
+  $bg: $black;
+  $fg: $white;
+
+  color: $fg;
+  background-color: $bg;
+
+  @include py(em(20));
+  @include flex-container(row justify-center);
+  @include size(100%, auto);
+  @include position(fixed);
+}
+
+.header__wrapper {
+  // width: 80-%;
+  // display: flex;
+  // flex-flow: row nowrap;
+  // justify-content: space-between;
+  @include size(80%, auto);
+  @include flex-container(row justify-between);
+}
